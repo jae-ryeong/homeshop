@@ -1,6 +1,8 @@
 package jae.homeshop.entity.member;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Member {
@@ -14,9 +16,11 @@ public class Member {
 
     private int age;
 
+    @Email(message = "이메일 형식으로 입력해야합니다.")
     private String email;
 
     @Enumerated(EnumType.STRING)
+    @NotNull
     private MemberGrade grade;
 
 
